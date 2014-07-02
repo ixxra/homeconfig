@@ -1,0 +1,29 @@
+##USAGE: 
+#
+# source anaconda
+#
+##ABOUT:
+#
+# this loads anaconda in your $PATH, so that your old python 
+# can not be executed by default.
+#
+# The prompt is modified with a little snake, so you don't forget 
+# the anaconda is in your PATH ;-)
+#
+# to restore your system, just run `escape_the_anaconda`
+
+
+OLD_PATH=$PATH
+OLD_PS1=$PS1
+
+escape_the_anaconda()
+{
+    PATH=$OLD_PATH
+    PS1=$OLD_PS1
+    echo "Hurray! the anaconda didn't devoured you"
+}
+
+PATH=~/opt/anaconda/bin:$PATH
+PS1='[~>\u@\h \W]\$ '
+
+echo 'This terminal has been set to be used with anaconda. Enjoy!'
